@@ -1,0 +1,33 @@
+doctype html
+html(lang="en", ng-app="hmp", ng-controller="GameController")
+  head
+    base(href="/bootstrap")
+    title Harvest Moon Project
+
+    //- Viewport mobile tag for sensible mobile support
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no")
+
+    //- STYLES
+    link(rel="stylesheet", href="/styles/importer.css")
+    //- STYLES END
+
+    //- ANGULAR TEMPLATES
+    - var tmp = clearString("views/templates/testjade")
+    script(type="text/ng-template", id="#{tmp}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/test2jade")
+    script(type="text/ng-template", id="#{tmp}")!= templateRender(tmp, context)
+    //- ANGULAR TEMPLATES END
+  body
+    span(ui-view)
+    //- SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    script(src="/third-party/enchant.js-builds/build/enchant.js")
+    script(src="/third-party/enchant.js-builds/libs/Box2dWeb-2.1.a.3.js")
+    script(src="/third-party/enchant.js-builds/libs/ammo.js")
+    script(src="/third-party/enchant.js-builds/libs/gl-matrix-min.js")
+    script(src="/third-party/enchant.js-builds/build/plugins/box2d.enchant.js")
+    script(src="/third-party/enchant.js-builds/build/plugins/mixing.enchant.js")
+    script(src="/third-party/angular/angular.js")
+    script(src="/js/game.js")
+    script(src="/js/controllers/GameController.js")
+    //- SCRIPTS END
