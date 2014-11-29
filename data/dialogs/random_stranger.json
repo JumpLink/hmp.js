@@ -1,0 +1,33 @@
+{
+  "question": "Wie gehts?",
+  "dialogtree": [
+    {
+      "answer": "Gut",
+      "question": "Ausgezeichnet"
+    },
+    {
+      "answer": "Nicht gut",
+      "question": "Warum?",
+      "dialogtree":[
+        {
+          "answer": "Ninjas haben meinen Hund geklaut",
+          "question": "Was?",
+          "dialogtree": [
+            {
+              "answer": "Ninjas haben meinen Hund geklaut",
+              "question": "So ein Bloedsinn"
+            },
+            {
+              "answer": "Vergiss es",
+              "question": "OK"
+            },
+            {
+              "answer": "Nur so",
+              "question": "Ach so"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,11 +1,23 @@
-hmp.controller('GameController', function($scope, $log, $window) {
+app.controller('GameController', function($scope, $log, $window, EnchantService) {
 
-  $log.debug($window.screen);
+  // $log.debug($window.screen);
+
+  // Game instance allready exists?
+  if(enchant.Core.instance == null) {
+
+  } else {
+    $log.debug(enchant.Core.instance);
+    EnchantService.reset(enchant.Core.instance);
+
+  }
+
 
   enchant(); // initialize
   var game = new Core($window.screen.width, $window.screen.height); // game stage
   game.preload('images/sprites/chara1.png'); // preload image
   game.fps = 20;
+
+
 
   game.onload = function(){
     var bear = new Sprite(32, 32);
@@ -21,4 +33,5 @@ hmp.controller('GameController', function($scope, $log, $window) {
   };
 
   game.start(); // start your game!
+
 });

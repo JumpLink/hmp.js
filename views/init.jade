@@ -1,5 +1,5 @@
 doctype html
-html(lang="en", ng-app="hmp", ng-controller="GameController")
+html(lang="en", ng-app="hmp", ng-controller="AppController")
   head
     base(href="/bootstrap")
     title Harvest Moon Project
@@ -12,10 +12,16 @@ html(lang="en", ng-app="hmp", ng-controller="GameController")
     //- STYLES END
 
     //- ANGULAR TEMPLATES
-    - var tmp = clearString("views/templates/testjade")
-    script(type="text/ng-template", id="#{tmp}")!= templateRender(tmp, context)
-    - var tmp = clearString("views/templates/test2jade")
-    script(type="text/ng-template", id="#{tmp}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/debugjade")
+    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/debug/footerjade")
+    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/debug/mapjade")
+    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/debug/toolbarjade")
+    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)
+    - var tmp = clearString("views/templates/gamejade")
+    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)
     //- ANGULAR TEMPLATES END
   body
     span(ui-view)
@@ -23,11 +29,18 @@ html(lang="en", ng-app="hmp", ng-controller="GameController")
     script(src="/js/dependencies/sails.io.js")
     script(src="/third-party/enchant.js-builds/build/enchant.js")
     script(src="/third-party/enchant.js-builds/libs/Box2dWeb-2.1.a.3.js")
-    script(src="/third-party/enchant.js-builds/libs/ammo.js")
-    script(src="/third-party/enchant.js-builds/libs/gl-matrix-min.js")
     script(src="/third-party/enchant.js-builds/build/plugins/box2d.enchant.js")
     script(src="/third-party/enchant.js-builds/build/plugins/mixing.enchant.js")
     script(src="/third-party/angular/angular.js")
-    script(src="/js/game.js")
+    script(src="/third-party/angular-ui-router/release/angular-ui-router.js")
+    script(src="/js/app.js")
+    script(src="/js/config/routes.js")
+    script(src="/js/controllers/AppController.js")
+    script(src="/js/controllers/DebugController.js")
+    script(src="/js/controllers/FooterController.js")
     script(src="/js/controllers/GameController.js")
+    script(src="/js/controllers/MapController.js")
+    script(src="/js/controllers/ToolbarController.js")
+    script(src="/js/directives/test.js")
+    script(src="/js/services/EnchantService.js")
     //- SCRIPTS END

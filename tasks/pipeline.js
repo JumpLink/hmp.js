@@ -31,7 +31,6 @@ var jsFilesToInject = [
 
   // Bower dependencies
   'third-party/enchant.js-builds/build/enchant.js',
-  'third-party/enchant.js-builds/libs/*.js',
   'third-party/enchant.js-builds/libs/Box2dWeb-2.1.a.3.js',                 // required by box2d.enchant
   // 'third-party/enchant.js-builds/libs/gl-matrix-min.js',                 // required by gl.enchant
   // 'third-party/enchant.js-builds/libs/ammo.js',                          // required by physics.gl.enchant.js
@@ -56,11 +55,14 @@ var jsFilesToInject = [
   // 'third-party/enchant.js-builds/build/plugins/wiiu.enchant.js',         // Library for making game for Nintendo wii U
 
   'third-party/angular/angular.js',
+  'third-party/angular-ui-router/release/angular-ui-router.js',
+
 
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/game.js',
+  'js/app.js',
+  'js/config/*.js',
   'js/**/*.js'
 ];
 
@@ -79,7 +81,7 @@ var templateFilesToInject = [
 ];
 
 var tplAngularJadeToInject = [
-  'templates/*.jade'
+  'templates/**/*.jade'
 ];
 
 

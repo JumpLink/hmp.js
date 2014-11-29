@@ -152,7 +152,7 @@ module.exports = function(grunt) {
       options: {
         startTag: '//- ANGULAR TEMPLATES',
         endTag: '//- ANGULAR TEMPLATES END',
-        fileTmpl: '- var tmp = clearString("%s")\n    script(type="text/ng-template", id="#{tmp}")!= templateRender(tmp, context)',
+        fileTmpl: '- var tmp = clearString("%s")\n    script(type="text/ng-template", id="#{clearIDString(tmp)}")!= templateRender(tmp, context)',
         appRoot: '.'
       },
       files: {
