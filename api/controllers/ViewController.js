@@ -7,9 +7,8 @@ var clearString = function (str) {
 };
 
 var clearIDString = function (str) {
-  sails.log.debug('clearIDString', str.substring(16));
+  // sails.log.debug('clearIDString', str.substring(16));
   return str.substring(16); // remove "views/templates/" vom string
-
 };
 
 var templateRender = function (file, context) {
@@ -19,7 +18,6 @@ var templateRender = function (file, context) {
 };
 
 module.exports = {
-
   init: function(req, res) {
     // sails.log.debug(sails);
     return res.view("init", {

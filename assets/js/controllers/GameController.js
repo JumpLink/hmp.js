@@ -2,36 +2,39 @@ app.controller('GameController', function($scope, $log, $window, EnchantService)
 
   // $log.debug($window.screen);
 
-  // Game instance allready exists?
-  if(enchant.Core.instance == null) {
+  var clock, block, layer;
 
-  } else {
-    $log.debug(enchant.Core.instance);
-    EnchantService.reset(enchant.Core.instance);
+  // Create a canvas to draw on
+  layer = BLOCKS.layer({
+    parentElement: document.getElementById("demo"),
+    // height: 100,
+    // width: 100
+  });
 
-  }
+  // Create a block
+  block = BLOCKS.block();
 
+  // Add a slice to the block
+  block.addSlice({
+    layer: layer,
+    imageSrc: "images/sprites/coin.png", // Define sprite sheet location
+    numberOfFrames: 10, // Define number of frames of animation
+    loop: true
+  });
 
-  enchant(); // initialize
-  var game = new Core($window.screen.width, $window.screen.height); // game stage
-  game.preload('images/sprites/chara1.png'); // preload image
-  game.fps = 20;
+  // Create a clock
+  clock = BLOCKS.clock();
 
+  // Update and render the block on each tick of the clock
+  clock.addEventListener("tick", function () {
+    block.update();
+    if (block.dirty) { // Clear the layer if the block is dirty
+      layer.clear();
+    }
+    block.render();
+  });
 
-
-  game.onload = function(){
-    var bear = new Sprite(32, 32);
-    bear.image = game.assets['images/sprites/chara1.png'];
-    game.rootScene.addChild(bear);
-    bear.frame = [6, 6, 7, 7];   // select sprite frame
-
-    bear.tl.moveBy(288, 0, 90)   // move right
-    .scaleTo(-1, 1, 10)      // turn left
-    .moveBy(-288, 0, 90)     // move left
-    .scaleTo(1, 1, 10)       // turn right
-    .loop();                 // loop it
-  };
-
-  game.start(); // start your game!
+  // Start the clock
+  clock.start();
 
 });

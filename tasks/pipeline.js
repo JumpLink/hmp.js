@@ -30,20 +30,20 @@ var jsFilesToInject = [
   'js/dependencies/**/*.js',
 
   // Bower dependencies
-  'third-party/enchant.js-builds/build/enchant.js',
-  'third-party/enchant.js-builds/libs/Box2dWeb-2.1.a.3.js',                 // required by box2d.enchant
+  // 'third-party/enchant.js-builds/build/enchant.js',
+  // 'third-party/enchant.js-builds/libs/Box2dWeb-2.1.a.3.js',                 // required by box2d.enchant
   // 'third-party/enchant.js-builds/libs/gl-matrix-min.js',                 // required by gl.enchant
   // 'third-party/enchant.js-builds/libs/ammo.js',                          // required by physics.gl.enchant.js
 
   // http://enchantjs.com/resource/plugins/
   // 'third-party/enchant.js-builds/build/plugins/nineleap.enchant.js',     // enchant.js extension for 9leap.net, required by twitter.enchant, memory.enchant
   // 'third-party/enchant.js-builds/build/plugins/avatar.enchant.js',       // enchant.js extension for 9leap.net, Avatar character plugin for enchant.js with 9leap.net
-  'third-party/enchant.js-builds/build/plugins/box2d.enchant.js',           // box2d physik engine for enchant.js: http://box2d.org/about/
+  // 'third-party/enchant.js-builds/build/plugins/box2d.enchant.js',           // box2d physik engine for enchant.js: http://box2d.org/about/
   // 'third-party/enchant.js-builds/build/plugins/gl.enchant.js',           // Drawing library using WebGL By combining with enchant.js, high quality 3D drawing and combination with 2D drawing is possible
   // 'third-party/enchant.js-builds/build/plugins/collada.gl.enchant.js',   // Plugin to load collada format (.dae) files on gl.enchant.js
   // 'third-party/enchant.js-builds/build/plugins/extendMap.enchant.js',    // http://github.com/wise9/enchantMapEditor
   // 'third-party/enchant.js-builds/build/plugins/memory.enchant.js',       // enchant.js extention for 9leap.net
-  'third-party/enchant.js-builds/build/plugins/mixing.enchant.js',          // A plugin for enchant.js which allows to mix arbitrary many {@link enchant.Class} classes together.
+  // 'third-party/enchant.js-builds/build/plugins/mixing.enchant.js',          // A plugin for enchant.js which allows to mix arbitrary many {@link enchant.Class} classes together.
   // 'third-party/enchant.js-builds/build/plugins/mmd.gl.enchant.js',       // Plugin to allow use of MikuMikuDance PMD and VMD files in gl.enchant.js.
   // 'third-party/enchant.js-builds/build/plugins/physics.gl.enchant.js',   // Physical calculation library using ammo.js. Allows object movement using the gl.enchant.js physical calculator.
   // 'third-party/enchant.js-builds/build/plugins/primitive.gl.enchantjs',  // Primitive objects for gl.enchant.js
@@ -53,6 +53,8 @@ var jsFilesToInject = [
   // 'third-party/enchant.js-builds/build/plugins/ui.enchant.js',           // image files for gamepad, icons
   // 'third-party/enchant.js-builds/build/plugins/widget.enchant.js',       // Library for making mobile webpage-style UIs in enchant.js.
   // 'third-party/enchant.js-builds/build/plugins/wiiu.enchant.js',         // Library for making game for Nintendo wii U
+
+  'third-party/BlocksJS/src/**/*.js',
 
   'third-party/angular/angular.js',
   'third-party/angular-ui-router/release/angular-ui-router.js',
